@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "title": "Mohammad Sadra Soltani | Full-Stack Developer",
+    "description": "Full-stack developer — Flutter, Next.js, FastAPI, AI API engineering across Android, iOS, Windows, macOS & Web"
+  },
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "contact": "Hire Me",
+    "language": "Language"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "Mohammad Sadra Soltani",
+    "role": "Full-Stack Developer",
+    "subtitle": "Android · iOS · Windows · macOS · Web Apps · Websites · AI API Engineering",
+    "ctaProjects": "View Projects",
+    "ctaContact": "Get in Touch"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I'm a full-stack developer who builds cross-platform applications and intelligent APIs. From Flutter mobile apps on Android and iOS to desktop apps on Windows and macOS, modern websites with Next.js, and AI-powered backends with FastAPI — I deliver end-to-end solutions with clean architecture and performance in mind."
+  },
+  "skills": {
+    "title": "Skills",
+    "categories": {
+      "crossPlatform": "Cross-Platform",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Tools"
+    }
+  },
+  "experience": {
+    "title": "Experience",
+    "items": []
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Selected works and case studies",
+    "empty": "Projects coming soon — stay tuned!",
+    "viewProject": "View Project",
+    "viewAll": "View All Projects",
+    "techStack": "Tech Stack",
+    "links": "Links",
+    "github": "GitHub",
+    "liveDemo": "Live Demo",
+    "backToProjects": "Back to Projects",
+    "gallery": "Gallery"
+  },
+  "contact": {
+    "title": "Let's Work Together",
+    "subtitle": "I'm open to freelance projects, full-time roles, and collaborations",
+    "email": "Email",
+    "telegram": "Telegram",
+    "github": "GitHub",
+    "copyEmail": "Copy Email",
+    "copied": "Copied!",
+    "availability": "Currently available for new opportunities"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "builtWith": "Built with Next.js & Tailwind CSS"
+  }
+}

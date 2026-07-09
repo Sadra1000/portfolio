@@ -1,0 +1,43 @@
+---
+description: Portfolio project architecture and conventions
+alwaysApply: true
+---
+
+# Portfolio Project Rules
+
+## Stack
+
+- Next.js 16 App Router with static export (`output: "export"`)
+- TypeScript, Tailwind CSS v4, Framer Motion
+- Deployed to GitHub Pages via GitHub Actions
+
+## i18n (Single Site)
+
+- One site — NOT separate EN/FA sites
+- Locales: `en` (default), `fa` via client-side `LanguageProvider`
+- Translation files: `src/i18n/messages/{locale}.json`
+- Language toggle switches text + `dir` (ltr/rtl) without changing routes
+- All user-facing text MUST go through dictionary files
+- Routes are locale-free: `/`, `/projects`, `/contact`
+
+## Data Layer
+
+- Profile data: `src/data/profile.ts`
+- Projects data: `src/data/projects.ts` (add projects one by one)
+
+## UI Conventions
+
+- Dark theme only — blue/cyan/green neon palette
+- Hero uses `NeuralNetworkBackground` canvas (not terminal)
+- Use `GlassCard`, `NeonOrb`, `AnimatedSection` for UI
+
+## Adding Pages
+
+- New pages go under `src/app/`
+- Use `generateStaticParams()` for dynamic routes
+- Use `useLanguage()` hook in client components for translations
+
+## Images
+
+- Place assets in `public/images/`
+- `next/image` with `unoptimized: true`

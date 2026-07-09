@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+:root {
+  --background: #030712;
+  --foreground: #f1f5f9;
+  --neon-blue: #3b82f6;
+  --neon-cyan: #22d3ee;
+  --neon-green: #10b981;
+  --neon-emerald: #34d399;
+  --glass-bg: rgba(15, 23, 42, 0.6);
+  --glass-border: rgba(148, 163, 184, 0.1);
+  --glass-highlight: rgba(255, 255, 255, 0.05);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-neon-blue: var(--neon-blue);
+  --color-neon-cyan: var(--neon-cyan);
+  --color-neon-green: var(--neon-green);
+  --color-neon-emerald: var(--neon-emerald);
+  --color-glass-bg: var(--glass-bg);
+  --color-glass-border: var(--glass-border);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(59, 130, 246, 0.3) transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(59, 130, 246, 0.3);
+  color: #fff;
+}
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-strong {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.neon-glow-blue {
+  box-shadow:
+    0 0 20px rgba(59, 130, 246, 0.15),
+    0 0 60px rgba(59, 130, 246, 0.05);
+}
+
+.neon-glow-green {
+  box-shadow:
+    0 0 20px rgba(16, 185, 129, 0.15),
+    0 0 60px rgba(16, 185, 129, 0.05);
+}
+
+.neon-text-blue {
+  text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+.neon-text-green {
+  text-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6, #22d3ee, #10b981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-mesh {
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(16, 185, 129, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(34, 211, 238, 0.05) 0%, transparent 50%);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+[dir="rtl"] .rtl-flip {
+  transform: scaleX(-1);
+}

@@ -1,0 +1,28 @@
+---
+description: Next.js and React component patterns for this portfolio
+globs: src/**/*.{ts,tsx}
+alwaysApply: false
+---
+
+# Next.js Best Practices
+
+## i18n Pattern
+
+```tsx
+// ✅ Use useLanguage() in client components
+const { locale, dict, toggleLocale } = useLanguage();
+<p>{dict.hero.name}</p>
+```
+
+## Routes
+
+- `/` — home
+- `/projects` — project list
+- `/projects/[slug]` — project detail
+- `/contact` — contact page
+
+## Do Not
+
+- Create `/en` or `/fa` route prefixes
+- Hardcode strings — use dictionary files
+- Use API routes (static export)

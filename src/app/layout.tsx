@@ -25,6 +25,10 @@ export const metadata: Metadata = {
   title: "Mohammad Sadra Soltani | Full-Stack Developer",
   description:
     "Full-stack developer — Flutter, Next.js, FastAPI, AI API engineering",
+  icons: {
+    icon: "/images/logo.png",
+    apple: "/images/logo.png",
+  },
 };
 
 export default function RootLayout({

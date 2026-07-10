@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Globe } from "lucide-react";
@@ -32,8 +33,19 @@ export function Navbar() {
     <header className="fixed top-0 inset-x-0 z-50">
       <nav className="glass-strong mx-4 mt-4 rounded-2xl px-6 py-3 max-w-6xl lg:mx-auto">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-lg font-bold gradient-text">
-            {"</>"}
+          <Link
+            href="/"
+            className="flex items-center shrink-0 rounded-lg transition-opacity hover:opacity-90"
+            aria-label={dict.meta.title}
+          >
+            <Image
+              src="/images/logo.png"
+              alt=""
+              width={36}
+              height={36}
+              className="w-9 h-9 object-contain"
+              priority
+            />
           </Link>
 
           <div className="hidden md:flex items-center gap-1">

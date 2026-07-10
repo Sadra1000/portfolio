@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Vazirmatn } from "next/font/google";
 import { LanguageProvider } from "@/i18n/LanguageProvider";
+import { assetPath } from "@/lib/paths";
 import { AppShell } from "@/components/layout/AppShell";
 import "./globals.css";
 
@@ -26,8 +27,8 @@ export const metadata: Metadata = {
   description:
     "Full-stack developer — Flutter, Next.js, FastAPI, AI API engineering",
   icons: {
-    icon: "/images/logo.png",
-    apple: "/images/logo.png",
+    icon: assetPath("/images/logo.png"),
+    apple: assetPath("/images/logo.png"),
   },
 };
 

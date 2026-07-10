@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { assetPath } from "@/lib/paths";
 import { useLanguage } from "@/i18n/LanguageProvider";
 
 interface ProjectGalleryProps {
@@ -29,7 +30,7 @@ export function ProjectGallery({ images, title }: ProjectGalleryProps) {
         onClick={() => setLightboxOpen(true)}
       >
         <Image
-          src={images[activeIndex]}
+          src={assetPath(images[activeIndex])}
           alt={`${title} - ${activeIndex + 1}`}
           fill
           className="object-cover"
@@ -67,7 +68,7 @@ export function ProjectGallery({ images, title }: ProjectGalleryProps) {
                 i === activeIndex ? "border-neon-cyan" : "border-transparent opacity-60 hover:opacity-100"
               )}
             >
-              <Image src={img} alt="" fill className="object-cover" sizes="80px" />
+              <Image src={assetPath(img)} alt="" fill className="object-cover" sizes="80px" />
             </button>
           ))}
         </div>
@@ -91,7 +92,7 @@ export function ProjectGallery({ images, title }: ProjectGalleryProps) {
             </button>
             <div className="relative w-full max-w-5xl aspect-video" onClick={(e) => e.stopPropagation()}>
               <Image
-                src={images[activeIndex]}
+                src={assetPath(images[activeIndex])}
                 alt={title}
                 fill
                 className="object-contain"

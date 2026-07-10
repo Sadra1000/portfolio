@@ -1,3 +1,5 @@
+import { assetPath } from "@/lib/paths";
+
 export const profile = {
   name: {
     en: "Mohammad Sadra Soltani",
@@ -6,7 +8,7 @@ export const profile = {
   email: "soltani.flutter.dev@gmail.com",
   telegram: "@flut_dev",
   github: "https://github.com/Sadra1000",
-  avatar: "/images/avatar.png",
+  avatar: assetPath("/images/avatar.png"),
 } as const;
 
 export const skills = {

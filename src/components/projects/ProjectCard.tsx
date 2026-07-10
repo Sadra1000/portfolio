@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
+import { assetPath } from "@/lib/paths";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import type { Project } from "@/data/projects";
@@ -29,7 +30,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
       >
         <div className="relative aspect-video overflow-hidden">
           <Image
-            src={project.images[0]}
+            src={assetPath(project.images[0])}
             alt={project.title[locale]}
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-110"

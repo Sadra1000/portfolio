@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Globe } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { assetPath } from "@/lib/paths";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import type { Locale } from "@/i18n/config";
 
@@ -39,7 +40,7 @@ export function Navbar() {
             aria-label={dict.meta.title}
           >
             <Image
-              src="/images/logo.png"
+              src={assetPath("/images/logo.png")}
               alt=""
               width={36}
               height={36}

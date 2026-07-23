@@ -1,14 +1,14 @@
 # Portfolio Website
 
-A modern, bilingual (EN/FA) developer portfolio built with Next.js, Tailwind CSS, and Framer Motion. Features glass morphism design, neon light effects, interactive terminal, and static deployment to GitHub Pages.
+A modern, bilingual (EN/FA) developer portfolio built with Next.js, Tailwind CSS, and Framer Motion. Features glass morphism design, neon light effects, and deployment to Cloudflare Workers via OpenNext.
 
 ## Tech Stack
 
-- **Framework:** Next.js 16 (App Router, Static Export)
+- **Framework:** Next.js 16 (App Router)
 - **Styling:** Tailwind CSS v4
 - **Animations:** Framer Motion
 - **Icons:** Lucide React
-- **Deployment:** GitHub Actions → GitHub Pages
+- **Deployment:** Cloudflare Workers (`@opennextjs/cloudflare`)
 
 ## Getting Started
 
@@ -17,13 +17,13 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) — redirects to `/en`.
+Open [http://localhost:3000](http://localhost:3000).
 
 ## Project Structure
 
 ```
 src/
-  app/[locale]/       # Localized routes
+  app/                # App Router pages (locale-free)
   components/         # UI components
   data/               # Profile & project data
   i18n/               # Translations (en, fa)
@@ -35,11 +35,12 @@ public/images/        # Static assets
 
 | Route | Description |
 |-------|-------------|
-| `/en` | Landing page (hero, about, skills, experience, featured projects) |
-| `/en/projects` | All projects grid |
-| `/en/projects/[slug]` | Project detail with gallery |
-| `/en/contact` | Contact / hire me page |
-| `/fa/...` | Same pages in Farsi (RTL) |
+| `/` | Landing page (hero, about, skills, experience, featured projects) |
+| `/projects` | All projects grid |
+| `/projects/[slug]` | Project detail with gallery |
+| `/contact` | Contact / hire me page |
+
+Language (EN/FA) is switched client-side; routes stay the same.
 
 ## Customization
 
@@ -51,17 +52,24 @@ public/images/        # Static assets
 
 ## Deployment
 
-Push to `main` branch. GitHub Actions builds and deploys automatically.
+```bash
+npm run deploy
+```
 
-**Before first deploy:**
-1. Enable GitHub Pages with source = "GitHub Actions" in repo settings
-2. If using a `username.github.io` repo, set `NEXT_PUBLIC_BASE_PATH: ""` in the workflow
+Or connect this GitHub repository in the Cloudflare dashboard (Workers Builds). Deploy command:
+
+```bash
+npx opennextjs-cloudflare build && npx opennextjs-cloudflare deploy
+```
 
 ## Scripts
 
 ```bash
-npm run dev      # Development server
-npm run build    # Static export to /out
-npm run lint     # ESLint
-node scripts/generate-placeholders.mjs  # Regenerate placeholder images
+npm run dev        # Next.js development server
+npm run build      # Next.js production build
+npm run preview    # Build + preview in Workers runtime (workerd)
+npm run deploy     # Build + deploy to Cloudflare Workers
+npm run upload     # Build + upload a new Worker version
+npm run cf-typegen # Generate CloudflareEnv types
+npm run lint       # ESLint
 ```

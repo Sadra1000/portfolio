@@ -7,9 +7,9 @@ alwaysApply: true
 
 ## Stack
 
-- Next.js 16 App Router with static export (`output: "export"`)
+- Next.js 16 App Router on Cloudflare Workers via `@opennextjs/cloudflare`
 - TypeScript, Tailwind CSS v4, Framer Motion
-- Deployed to GitHub Pages via GitHub Actions
+- Deploy with `npm run deploy` (or Workers Builds connected to the repo)
 
 ## i18n (Single Site)
 
@@ -40,4 +40,4 @@ alwaysApply: true
 ## Images
 
 - Place assets in `public/images/`
-- `next/image` with `unoptimized: true`
+- `next/image` uses Cloudflare Images binding (`IMAGES` in `wrangler.jsonc`)
